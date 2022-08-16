@@ -20,7 +20,7 @@ class OnboardingContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundGreen,
+      backgroundColor: AppColor.backgroundGreen,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -32,7 +32,7 @@ class OnboardingContent extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10))),
-            child: Image.asset(image),
+            child: Image.asset(image,fit: BoxFit.cover),
           ),
           SizedBox(
             width: 250,

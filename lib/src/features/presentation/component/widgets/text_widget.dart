@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class TextWidget extends StatelessWidget {
@@ -7,6 +6,8 @@ class TextWidget extends StatelessWidget {
   final double? fSize, wordSpacing;
   final Color? color;
   final TextAlign? textAlign;
+  final TextDecoration? decoration;
+  final Function()? onClickableCallBack;
   const TextWidget({
     Key? key,
     required this.text,
@@ -15,18 +16,24 @@ class TextWidget extends StatelessWidget {
     this.color,
     this.wordSpacing,
     this.textAlign,
+    this.decoration, this.onClickableCallBack,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      textAlign: textAlign,
-      style: TextStyle(
-        fontSize: fSize,
-        fontWeight: fWeight,
-        color: color,
-        wordSpacing: wordSpacing,
+    return GestureDetector(
+      onTap: onClickableCallBack,
+      child: Text(
+        text,
+        textAlign: textAlign,
+        style: TextStyle(
+          fontSize: fSize,
+          fontWeight: fWeight,
+          color: color,
+          wordSpacing: wordSpacing,
+          decoration: decoration,
+          // decorationStyle: TextDecorationStyle.double,
+        ),
       ),
     );
   }

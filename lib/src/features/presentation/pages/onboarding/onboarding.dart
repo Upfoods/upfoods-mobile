@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:upfood/src/config/constants/constants.dart';
 import 'package:upfood/src/config/constants/text.dart';
 import 'package:upfood/src/config/route/route.dart';
-import 'package:upfood/src/features/presentation/component/green_button.dart';
+import 'package:upfood/src/features/presentation/component/buttons/green_button.dart';
 import 'package:upfood/src/features/presentation/component/widgets/text_widget.dart';
 import 'package:upfood/src/features/presentation/pages/onboarding/onboarding_content.dart';
 
