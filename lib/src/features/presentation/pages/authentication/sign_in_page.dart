@@ -9,6 +9,7 @@ import 'package:upfood/src/features/presentation/component/icons/app_icons.dart'
 import 'package:upfood/src/features/presentation/component/widgets/custom_text_form_field.dart';
 import 'package:upfood/src/features/presentation/component/widgets/logo_and_name_widget.dart';
 import 'package:upfood/src/features/presentation/component/widgets/text_widget.dart';
+import 'package:upfood/src/features/presentation/pages/Home/home.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -73,13 +74,19 @@ class SignInPage extends StatelessWidget {
                   decoration: TextDecoration.underline,
                 ),
                 const SizedBox(height: 30),
-                const GreenButton(text: 'Login'),
+                GreenButton(
+                  text: 'Login',
+                  onPressed: () {
+                    navigateTo(Routes.homePage, context);
+                  },
+                ),
                 const SizedBox(height: 30),
                 TextWidget(
                   text: 'No Account? Sign Up',
                   fSize: 12,
                   fWeight: w500,
-                  onClickableCallBack: () => navigateTo(Routes.signUpPage, context),
+                  onClickableCallBack: () =>
+                      navigateTo(Routes.signUpPage, context),
                   // color: Color(0xFF3E88B),
                   color: const Color(0xFF15BE77),
                   decoration: TextDecoration.underline,

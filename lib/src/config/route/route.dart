@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:upfood/src/features/presentation/pages/Home/home.dart';
 import 'package:upfood/src/features/presentation/pages/authentication/sign_in_page.dart';
 import 'package:upfood/src/features/presentation/pages/authentication/sign_up_page.dart';
 
 class Routes {
   static const signUpPage = 'signUpPage';
   static const signInPage = 'signInPage';
+  static const homePage = 'home';
 
   static Route<dynamic>? generate(RouteSettings settings) {
     switch (settings.name) {
@@ -12,6 +14,8 @@ class Routes {
         return MaterialPageRoute(builder: (_) => const SignUpPage());
       case signInPage:
         return MaterialPageRoute(builder: (_) => const SignInPage());
+      case homePage:
+        return MaterialPageRoute(builder: (_) => const HomePage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
