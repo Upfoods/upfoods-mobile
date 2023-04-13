@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:upfood/src/features/presentation/component/buttons/small_white.dart';
+import 'package:upfood/src/features/presentation/component/buttons/white_button.dart';
 
 import '../../../../config/constants/colors.dart';
 
@@ -52,18 +54,140 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-              Column(
-                children: [
-                  ListView(
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Container(
+                  height: 125,
+                  child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      InkWell(
-                        child: Container(child:Image.asset('assets/images/p1.png')),
-                      )
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0, right: 10),
+                        child: Container(
+                            height: 20,
+                            width: 400,
+                            child: InkWell(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.green,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Image.asset(
+                                      "assets/images/p1.png",
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'Special deal for \nDecember',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 8.0),
+                                          child: SmallWhiteButton(
+                                            widget: Text(
+                                              "Buy now",
+                                              style: TextStyle(
+                                                  color: Colors.green),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Container(
+                            height: 20,
+                            width: 400,
+                            child: InkWell(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.green,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Image.asset(
+                                      "assets/images/p1.png",
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'Special Order for \nChrismas',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 8.0),
+                                          child: SmallWhiteButton(
+                                            widget: Text(
+                                              "Buy now",
+                                              style: TextStyle(
+                                                  color: Colors.green),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )),
+                      ),
                     ],
-                  )
-                ],
-              )
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Nearest Restaurant",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "view more",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.green
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
