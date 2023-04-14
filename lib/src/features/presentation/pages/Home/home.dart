@@ -1,6 +1,9 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:upfood/src/features/presentation/component/buttons/small_white.dart';
 import 'package:upfood/src/features/presentation/component/buttons/white_button.dart';
+import 'package:upfood/src/features/presentation/component/widgets/nearest_product_list.dart';
 
 import '../../../../config/constants/colors.dart';
 
@@ -16,9 +19,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.backgroundGreen,
-      body: Padding(
-        padding: const EdgeInsets.only(top: 80, left: 20, right: 20),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 80, left: 20, right: 20),
           child: Column(
             children: [
               Row(
@@ -178,19 +181,88 @@ class _HomePageState extends State<HomePage> {
                         Text(
                           "view more",
                           style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green
-                          ),
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green),
                         )
                       ],
                     ),
                   ],
                 ),
               ),
+              NearestProduct(),
+              Container(
+                color: Colors.green,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      "assets/images/p4.png",
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            'Special Order\nfor December',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0, bottom: 10),
+                          child: SmallWhiteButton(
+                            widget: Text(
+                              "View",
+                              style: TextStyle(color: Colors.green),
+                            ),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+               Padding(
+                 padding: const EdgeInsets.only(top:50),
+                 child: Column(
+                   
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              Image.asset("assets/images/p5.png"),
+                              Container(
+                                height: 50,
+                                color: Colors.green,
+                                child: Text("Jollof Rice & Chicken"),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      
+                    ],
+                  ),
+               ),
+              
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: NavigationBar(
+        backgroundColor: Colors.white,
+        destinations: [
+          NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+          NavigationDestination(
+              icon: Icon(Icons.person_sharp), label: "Profile"),
+          NavigationDestination(icon: Icon(Icons.shopping_cart), label: "Cart"),
+          NavigationDestination(icon: Icon(Icons.chat), label: "chat")
+        ],
       ),
     );
   }
