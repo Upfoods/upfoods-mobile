@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:upfood/src/features/presentation/component/buttons/small_white.dart';
@@ -226,30 +226,96 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-               Padding(
-                 padding: const EdgeInsets.only(top:50),
-                 child: Column(
-                   
-                    children: [
-                      Row(
-                        children: [
-                          Column(
-                            children: [
-                              Image.asset("assets/images/p5.png"),
-                              Container(
-                                height: 50,
-                                color: Colors.green,
-                                child: Text("Jollof Rice & Chicken"),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                      
-                    ],
-                  ),
-               ),
-              
+              Padding(
+                padding: const EdgeInsets.only(top: 50),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Image.asset("assets/images/p5.png"),
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color.fromARGB(255, 67, 180, 71),
+                              ),
+                              height: 60,
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "Jollof Rice & Chicken",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top:8.0),
+                                        child: Text(
+                                    "#2000",
+                                    style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold),
+                                  ),
+                                      ),
+                                    ],
+                                  ),
+                                  
+                                ),
+                                
+                              ),
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Image.asset("assets/images/p5.png"),
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color.fromARGB(255, 67, 180, 71),
+                              ),
+                              height: 60,
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "Jollof Rice & Chicken",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                        Padding(
+                                        padding: const EdgeInsets.only(top:8.0),
+                                        child: Text(
+                                    "#2000",
+                                    style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold),
+                                  ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
