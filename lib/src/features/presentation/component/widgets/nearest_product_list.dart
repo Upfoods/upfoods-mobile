@@ -16,13 +16,13 @@ class _NearestProductState extends State<NearestProduct> {
       restaurantTime: "\50",
     ),
     NearestRestaurant(
-      restaurantName: "GGad",
-      restaurantImage: "assets/images/p2.png",
+      restaurantName: "Elvis Bukateria",
+      restaurantImage: "assets/images/p3.png",
       restaurantRatings: "\4.6",
       restaurantTime: "\30",
     ),
     NearestRestaurant(
-      restaurantName: "mmd",
+      restaurantName: "Futo Cafe",
       restaurantImage: "assets/images/p2.png",
       restaurantRatings: "\4.6",
       restaurantTime: "\30",
@@ -33,17 +33,25 @@ class _NearestProductState extends State<NearestProduct> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 30),
-      child: ListView.separated(
-        itemCount: 1,
-        separatorBuilder: (context, _) {
-          return SizedBox(
-            width: 10,
-          );
+      child:
+         Container(
+           height: 200,
+      
+           child:
+           ListView.separated(
+            scrollDirection: Axis.horizontal,
+             itemCount: 3,
+             separatorBuilder: (BuildContext context, int index) {
+               return SizedBox(width: 10,) ;
+             },
+              itemBuilder: (context, int index) {
+            return nearestRestaurantList(restaurants: restaurants[index]);
         },
-        itemBuilder: (context, int index) {
-          return nearestRestaurantList(restaurants: index);
-        },
-      ),
+           ),
+            
+         ),
+      
+      
     );
   }
 }
@@ -54,14 +62,16 @@ Widget nearestRestaurantList({
     Padding(
       padding: const EdgeInsets.only(right: 10),
       child: Container(
-        height: 120,
+       
+      
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Image(image: AssetImage(restaurants.restaurantImage)),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "Sunic",
+                restaurants.restaurantName,
                 style: TextStyle(fontSize: 17),
               ),
             ),
@@ -79,7 +89,7 @@ Widget nearestRestaurantList({
                       size: 17,
                     ),
                   ),
-                  Text("4.6 ."),
+                  Text(restaurants.restaurantRatings + " ."),
                   Padding(
                     padding: const EdgeInsets.only(right: 8.0, left: 20),
                     child: Icon(
@@ -87,7 +97,7 @@ Widget nearestRestaurantList({
                       size: 17,
                     ),
                   ),
-                  Text("30"),
+                  Text(restaurants.restaurantTime),
                 ],
                   
               )
